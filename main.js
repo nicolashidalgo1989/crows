@@ -1,5 +1,6 @@
 var svg = document.querySelector('#cable');
 //reference https://jsfiddle.net/83qpktrx/2/
+//https://www.sitepoint.com/svg-path-element/
 //dimension of svg
 var svgRect = svg.getBoundingClientRect();
 var svgw = svgRect.width;
