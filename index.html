@@ -1,62 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Poyecto 1 | Cuervos</title>
-		<style>
-			body{
-				background-image:url(img/limpieza.png);
-				background-repeat: no-repeat;
-				background-size: 100%;
-				background-position:0 120px;
-				overflow:hidden;
-				height:100%;
-			}
-			.sprites {
-			    position: absolute;
-			    top: 0;
-			    bottom: 0; 
-			    left: 0;
-			    right: 0;
-			    margin: auto;
-			    overflow: hidden;
-			}
-			.sprite {    
-				width: 200px;
-			    height: 200px;
-			    margin: 0;
-			    right: 0;
-			    left: auto;
-			    top: auto;
-			    position: absolute;
-			    overflow: hidden;
-			    animation: 2s crowSprint linear;
-			}
-			.sprite > img {
-				position: absolute;
-				transform: translateZ(0);
-				top: 0;
-				left: 0;
-				animation: 1s crowSpriteAnim linear step-end;
-			}
-			@keyframes crowSpriteAnim {
-				0%{
-					top: 0;
-					left: 0;
-				} 
-				50%{
-					top: -200px;
-					left: 0;
-				}
-				100%{
-					top: -600px;
-					left: 0;
-				}
-			}
-			@keyframes crowSprint{
-				0%{ top:-100px; right:150px; transform:translateX(100%); }
-				100%{ top: 250px; right: 200px; transform:none; }
-			}
-		</style>
+		<title>Poyecto 1 | Cuervos</title> 
+		<link href="main.css" rel="stylesheet">		
 	</head>
 	<body>
 		<div class="sprites">
@@ -64,5 +10,9 @@
 				<img src="img/sprite.png">
 			</div>
 		</div>
+		<svg class="cable">
+			<path d="M0,40 C600,250 2000,-670 2000,30"></path>
+			<path d="M0,80 C600,200 2000,-400 2000,30"></path>
+		</svg>
 	</body>
 </html>

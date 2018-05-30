@@ -1,0 +1,65 @@
+body{ 
+    overflow:hidden;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+.cable{
+    margin:0;
+    padding:0;
+    width:100%;
+    display:block;
+    position:fixed;
+    bottom:0;
+    overflow:visible
+}
+.cable path{
+    stroke:black;
+    stroke-width:5px; 
+    fill:none;
+}
+.sprites {
+    position: absolute;
+    top: 0;
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+}
+.sprite {    
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    right: 0;
+    left: auto;
+    top: auto;
+    position: absolute;
+    overflow: hidden;
+    animation: 2s crowSprint linear;
+}
+.sprite > img {
+    position: absolute;
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    animation: 1s crowSpriteAnim linear step-end;
+}
+@keyframes crowSpriteAnim {
+    0%{
+        top: 0;
+        left: 0;
+    } 
+    50%{
+        top: -200px;
+        left: 0;
+    }
+    100%{
+        top: -600px;
+        left: 0;
+    }
+}
+@keyframes crowSprint{
+    0%{ top:-100px; right:150px; transform:translateX(100%); }
+    100%{ top: 250px; right: 200px; transform:none; }
+}
