@@ -37,30 +37,35 @@ body{
     top: auto;
     position: absolute;
     overflow: hidden;
-    animation: 2s crowSprint linear;
-}
-.sprite > img {
-    position: absolute;
-    transform: translateZ(0);
-    top: 0;
-    left: 0;
-    animation: 1s crowSpriteAnim linear step-end;
-}
-@keyframes crowSpriteAnim {
-    0%{
-        top: 0;
-        left: 0;
-    } 
-    50%{
-        top: -200px;
-        left: 0;
-    }
-    100%{
-        top: -600px;
-        left: 0;
-    }
-}
+    background-size:contain;
+    background-repeat: no-repeat;
+    animation-name: crowSprint;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1;
+}  
 @keyframes crowSprint{
-    0%{ top:-100px; right:150px; transform:translateX(100%); }
-    100%{ top: 250px; right: 200px; transform:none; }
+    0%{ top:-100px; right:150px; transform:translateX(100%); 
+        background-image: url(img/1.png); }  
+    100%{ top: 65vh; right: 200px; transform:none; 
+        background-image: url(img/2.png); animation: imageSwap;}
 }
+@keyframes imageSwap {
+    0% {
+      opacity:1;
+    }
+    19% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    94% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+ }
