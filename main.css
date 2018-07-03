@@ -4,6 +4,7 @@ body{
     margin:0;
     padding:0;
 }
+
 .cable{
     margin: 0;
     padding: 0;
@@ -13,59 +14,131 @@ body{
     position: fixed;
     bottom: 0;
 }
+
 .cable path{
     stroke:black;
     stroke-width:5px; 
     fill:none;
     width:100%;
 }
-.sprites {
-    position: absolute;
-    top: 0;
-    bottom: 0; 
-    left: 0;
-    right: 0;
-    margin: auto;
-    overflow: hidden;
+
+.crow-move{
+    width:200px;
+    height:200px;
+    margin: 0; 
+    position: absolute; 
+    animation: fly 15s linear forwards;
 }
-.sprite {    
-    width: 200px;
-    height: 200px;
-    margin: 0;
-    right: 0;
-    left: auto;
-    top: auto;
-    position: absolute;
-    overflow: hidden;
-    background-size:contain;
-    background-repeat: no-repeat;
-    animation-name: crowSprint;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-duration: 2s;
-    animation-delay: 1;
-}  
-@keyframes crowSprint{
-    0%{ top:-100px; right:150px; transform:translateX(100%); 
-        background-image: url(img/1.png); }  
-    100%{ top: 65vh; right: 200px; transform:none; 
-        background-image: url(img/2.png); animation: imageSwap;}
+
+.crow-move.second{
+    animation: fly2 30s linear forwards;    
+    -webkit-animation-delay: 15s; /* Chrome, Safari, Opera */
+    animation-delay: 15s;
 }
-@keyframes imageSwap {
-    0% {
-      opacity:1;
-    }
-    19% {
-      opacity:1;
-    }
-    25% {
-      opacity:0;
-    }
-    94% {
-      opacity:0;
+
+@keyframes fly {
+    0%{     
+        top:0;
+        right:0;
+    } 
+    20%, 100%{ 
+        top:68vh;
+        right:400px;
+    } 
+}
+
+@keyframes fly2 {
+    0%{     
+        top:0;
+        left:0;
+    } 
+    50%, 60%{ 
+        top:70vh;
+        left:400px;
+    } 
+    60% {
+        top:70vh;
+        left:400px;
     }
     100% {
-      opacity:1;
+        top:0;
+        left:100%
     }
- }
+}
+
+.crow-move .crow-image{ 
+    width:100%;
+    height:100%;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    animation: crow 15s linear forwards; 
+}
+
+.crow-move.second .crow-image{  
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    animation: crow2 30s linear forwards ; 
+    -webkit-animation-delay: 15s; /* Chrome, Safari, Opera */
+    animation-delay: 15s;
+}
+
+@keyframes crow {
+    0%{/*crow volando*/
+        background-image: url(img/1.png);
+    }
+    10%{/*crow planeando*/
+        background-image: url(img/2.png);
+    }
+    15%{/*crow aterrizando*/
+        background-image: url(img/3.png);
+    }
+    20%, 30%{/*crow parado*/
+        background-image: url(img/4.png);   
+    }
+    35%{/*crow se agacha*/
+        background-image: url(img/5.png);   
+    }
+    40%{/*crow parado*/
+        background-image: url(img/4.png);
+    }
+    45%, 90%{ /*crow gira la cabeza*/
+        background-image: url(img/6.png);
+    } 
+    95%{
+        background-image: url(img/4.png);   
+    }
+    100%{/* crow gira la cabeza de nuevo*/
+        background-image: url(img/6.png);   
+    }
+}
+
+@keyframes crow2 {
+    0%{
+        background-image: url(img/1.png);
+    }
+    10%{
+        background-image: url(img/2.png);
+    }
+    15%{
+        background-image: url(img/3.png);
+    }
+    20%, 30%{
+        background-image: url(img/4.png);   
+    }
+    35%{
+        background-image: url(img/5.png);   
+    }
+    40%, 90%{
+        background-image: url(img/4.png);
+    } 
+    95% {
+        background-image: url(img/3.png);  
+    }
+    100% {
+        background-image: url(img/1.png); 
+    }
+}
