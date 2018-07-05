@@ -15,11 +15,56 @@ body{
     bottom: 0;
 }
 
-.cable path{
+.cable path {
     stroke:black;
     stroke-width:5px; 
     fill:none;
     width:100%;
+    animation: cable .3s linear;
+    animation-delay:2.95s;
+}
+
+.cable path:nth-child(1){
+    d: path('M0,80 C600,200 2000,0 2000,30');
+    animation: cable1 .3s linear forwards;
+    animation-delay: 2.95s;
+}
+
+.cable path:nth-child(2){
+    d: path('M0,40 C600,250 2000,0 2000,30');
+    animation: cable2 .3s linear forwards;
+    animation-delay: 2.95s;
+}
+
+@keyframes cable1{
+    to{ 
+        d: path('M0,80 C600,200 2000,0 2000,30')
+    }
+    from{
+        d: path('M0,40 C600,250 2000,0 2000,30') 
+    }
+}
+
+
+@keyframes cable2{
+    to{
+        d: path('M0,40 C600,250 2000,0 2000,30') 
+    }
+    from{
+        d: path('M0,80 C600,200 2000,0 2000,30')
+    }
+}
+
+@keyframes cable{
+    0%{
+        stroke:black;
+    }
+    50%{
+        stroke:white;
+    }
+    100%{
+        stroke:black;
+    }
 }
 
 .crow-move{
@@ -42,7 +87,7 @@ body{
         right:0;
     } 
     20%, 100%{ 
-        top:68vh;
+        top:70vh;
         right:400px;
     } 
 }
@@ -88,57 +133,60 @@ body{
 
 @keyframes crow {
     0%{/*crow volando*/
-        background-image: url(img/1.png);
+        background-image: url(svg/crow-fly-1.svg);
     }
     10%{/*crow planeando*/
-        background-image: url(img/2.png);
+        background-image: url(svg/crow-fly-2.svg);
     }
     15%{/*crow aterrizando*/
-        background-image: url(img/3.png);
+        background-image: url(svg/crow-fly-3.svg);
     }
     20%, 30%{/*crow parado*/
-        background-image: url(img/4.png);   
+        background-image: url(svg/crow-stop-1.svg);   
     }
     35%{/*crow se agacha*/
-        background-image: url(img/5.png);   
+        background-image: url(svg/crow-stop-2.svg);   
     }
     40%{/*crow parado*/
-        background-image: url(img/4.png);
+        background-image: url(svg/crow-stop-1.svg);
     }
     45%, 90%{ /*crow gira la cabeza*/
-        background-image: url(img/6.png);
+        background-image: url(svg/crow-stop-3.svg);
     } 
     95%{
-        background-image: url(img/4.png);   
+        background-image: url(svg/crow-stop-1.svg);   
     }
     100%{/* crow gira la cabeza de nuevo*/
-        background-image: url(img/6.png);   
+        background-image: url(svg/crow-stop-3.svg);   
     }
 }
 
 @keyframes crow2 {
-    0%{
-        background-image: url(img/1.png);
+    0%{/*crow volando*/
+        background-image: url(svg/crow-fly-1.svg);
     }
-    10%{
-        background-image: url(img/2.png);
+    10%{/*crow planeando*/
+        background-image: url(svg/crow-fly-2.svg);
     }
-    15%{
-        background-image: url(img/3.png);
+    15%{/*crow aterrizando*/
+        background-image: url(svg/crow-fly-3.svg);
     }
-    20%, 30%{
-        background-image: url(img/4.png);   
+    20%, 30%{/*crow parado*/
+        background-image: url(svg/crow-stop-1.svg);   
     }
-    35%{
-        background-image: url(img/5.png);   
+    35%{/*crow se agacha*/
+        background-image: url(svg/crow-stop-2.svg);   
     }
-    40%, 90%{
-        background-image: url(img/4.png);
+    40%{/*crow parado*/
+        background-image: url(svg/crow-stop-1.svg);
+    }
+    45%, 90%{ /*crow gira la cabeza*/
+        background-image: url(svg/crow-stop-3.svg);
     } 
-    95% {
-        background-image: url(img/3.png);  
+    95%{
+        background-image: url(svg/crow-stop-1.svg);   
     }
-    100% {
-        background-image: url(img/1.png); 
+    100%{/* crow gira la cabeza de nuevo*/
+        background-image: url(svg/crow-stop-3.svg);   
     }
 }
