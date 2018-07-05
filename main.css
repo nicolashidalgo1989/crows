@@ -19,21 +19,19 @@ body{
     stroke:black;
     stroke-width:5px; 
     fill:none;
-    width:100%;
-    animation: cable .3s linear;
-    animation-delay:2.95s;
+    width:100%;  
 }
 
 .cable path:nth-child(1){
     d: path('M0,80 C600,200 2000,0 2000,30');
     animation: cable1 .3s linear forwards;
-    animation-delay: 2.95s;
+    animation-delay: 4.95s;
 }
 
 .cable path:nth-child(2){
     d: path('M0,40 C600,250 2000,0 2000,30');
     animation: cable2 .3s linear forwards;
-    animation-delay: 2.95s;
+    animation-delay: 4.95s;
 }
 
 @keyframes cable1{
@@ -45,7 +43,6 @@ body{
     }
 }
 
-
 @keyframes cable2{
     to{
         d: path('M0,40 C600,250 2000,0 2000,30') 
@@ -55,30 +52,19 @@ body{
     }
 }
 
-@keyframes cable{
-    0%{
-        stroke:black;
-    }
-    50%{
-        stroke:white;
-    }
-    100%{
-        stroke:black;
-    }
-}
-
 .crow-move{
-    width:200px;
-    height:200px;
+    width:300px;
+    height:300px;
     margin: 0; 
     position: absolute; 
     animation: fly 15s linear forwards;
+    animation-delay:2s;
 }
 
 .crow-move.second{
-    animation: fly2 30s linear forwards;    
-    -webkit-animation-delay: 15s; /* Chrome, Safari, Opera */
-    animation-delay: 15s;
+    animation: fly2 15s linear forwards;    
+    -webkit-animation-delay: 15s;
+    animation-delay: 6s;
 }
 
 @keyframes fly {
@@ -87,8 +73,8 @@ body{
         right:0;
     } 
     20%, 100%{ 
-        top:70vh;
-        right:400px;
+        top:420px;
+        right:320px;
     } 
 }
 
@@ -97,18 +83,10 @@ body{
         top:0;
         left:0;
     } 
-    50%, 60%{ 
-        top:70vh;
-        left:400px;
+    20%, 100%{ 
+        top:420px;
+        left:320px;
     } 
-    60% {
-        top:70vh;
-        left:400px;
-    }
-    100% {
-        top:0;
-        left:100%
-    }
 }
 
 .crow-move .crow-image{ 
@@ -117,7 +95,9 @@ body{
     background-size:100% 100%;
     background-repeat:no-repeat;
     animation: crow 15s linear forwards; 
+    animation-delay:2s;
 }
+
 
 .crow-move.second .crow-image{  
     -moz-transform: scaleX(-1);
@@ -126,67 +106,68 @@ body{
     transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
-    animation: crow2 30s linear forwards ; 
-    -webkit-animation-delay: 15s; /* Chrome, Safari, Opera */
-    animation-delay: 15s;
+    animation: crow2 15s linear forwards ; 
+    -webkit-animation-delay: 6s; 
+    animation-delay: 6s;
 }
 
+
 @keyframes crow {
-    0%{/*crow volando*/
+    0%,10%{/*crow volando*/
         background-image: url(svg/crow-fly-1.svg);
     }
-    10%{/*crow planeando*/
+    10%,20%{/*crow planeando*/
         background-image: url(svg/crow-fly-2.svg);
     }
-    15%{/*crow aterrizando*/
+    20%,30%{/*crow aterrizando*/
         background-image: url(svg/crow-fly-3.svg);
     }
-    20%, 30%{/*crow parado*/
+    30%,40%{/*crow parado*/
         background-image: url(svg/crow-stop-1.svg);   
     }
-    35%{/*crow se agacha*/
+    40%{/*crow se agacha*/
         background-image: url(svg/crow-stop-2.svg);   
     }
-    40%{/*crow parado*/
+    50%{/*crow parado*/
         background-image: url(svg/crow-stop-1.svg);
     }
-    45%, 90%{ /*crow gira la cabeza*/
+    60%, 70%{ /*crow gira la cabeza*/
         background-image: url(svg/crow-stop-3.svg);
     } 
-    95%{
+    80%{
         background-image: url(svg/crow-stop-1.svg);   
     }
-    100%{/* crow gira la cabeza de nuevo*/
+    90%,100%{/* crow gira la cabeza de nuevo*/
         background-image: url(svg/crow-stop-3.svg);   
     }
 }
 
 @keyframes crow2 {
-    0%{/*crow volando*/
+    0%,10%{/*crow volando*/
         background-image: url(svg/crow-fly-1.svg);
     }
-    10%{/*crow planeando*/
+    10%,20%{/*crow planeando*/
         background-image: url(svg/crow-fly-2.svg);
     }
-    15%{/*crow aterrizando*/
+    20%,30%{/*crow aterrizando*/
         background-image: url(svg/crow-fly-3.svg);
     }
-    20%, 30%{/*crow parado*/
+    30%,40%{/*crow parado*/
         background-image: url(svg/crow-stop-1.svg);   
     }
-    35%{/*crow se agacha*/
+    40%{/*crow se agacha*/
         background-image: url(svg/crow-stop-2.svg);   
     }
-    40%{/*crow parado*/
+    50%{/*crow parado*/
         background-image: url(svg/crow-stop-1.svg);
     }
-    45%, 90%{ /*crow gira la cabeza*/
+    60%, 70%{ /*crow gira la cabeza*/
         background-image: url(svg/crow-stop-3.svg);
     } 
-    95%{
+    80%{
         background-image: url(svg/crow-stop-1.svg);   
     }
-    100%{/* crow gira la cabeza de nuevo*/
+    90%,100%{/* crow gira la cabeza de nuevo*/
         background-image: url(svg/crow-stop-3.svg);   
     }
 }
